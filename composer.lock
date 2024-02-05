@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6c62638bbddb869983e169cc83e89a1",
+    "content-hash": "3f7291ae1382d8f46169f7f101efb94e",
     "packages": [
         {
             "name": "async-aws/core",
@@ -3255,6 +3255,71 @@
             "time": "2024-01-29T15:41:16+00:00"
         },
         {
+            "name": "symfony/google-mailer",
+            "version": "v7.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/google-mailer.git",
+                "reference": "afa051a4ae1f76609024708ad1a65b2b1c64c9ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/google-mailer/zipball/afa051a4ae1f76609024708ad1a65b2b1c64c9ae",
+                "reference": "afa051a4ae1f76609024708ad1a65b2b1c64c9ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/mailer": "^6.4|^7.0"
+            },
+            "require-dev": {
+                "symfony/http-client": "^6.4|^7.0"
+            },
+            "type": "symfony-mailer-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Mailer\\Bridge\\Google\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Google Mailer Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/google-mailer/tree/v7.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-01-23T15:02:46+00:00"
+        },
+        {
             "name": "symfony/http-client",
             "version": "v7.0.3",
             "source": {
@@ -5058,6 +5123,55 @@
                 }
             ],
             "time": "2024-01-23T15:02:46+00:00"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "7.14.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:twilio/twilio-php.git",
+                "reference": "823f2630c14a67e904e1bf63f9b0d7053812d751"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/823f2630c14a67e904e1bf63f9b0d7053812d751",
+                "reference": "823f2630c14a67e904e1bf63f9b0d7053812d751",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.3 || ^7.0",
+                "phpunit/phpunit": ">=7.0 < 10"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "An HTTP client to execute the API requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "src/Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "https://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2024-01-25T11:51:56+00:00"
         }
     ],
     "packages-dev": [

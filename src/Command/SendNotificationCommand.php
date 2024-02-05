@@ -35,19 +35,17 @@ class SendNotificationCommand extends Command
 
         $messagingProvider = $this->messagingProviderContext->handle($data);
 
-        $this->getShippingRegisterMessageOutput($messagingProviderKey, $messagingProvider, $output);
+        $this->getShippingRegisterMessageOutput($messagingProvider, $output);
 
         return 0;
     }
 
     private function getShippingRegisterMessageOutput(
-        $messagingProviderKey,
         $messagingProvider,
         OutputInterface $output
     ): void
     {
         $output->write("", true);
-        $output->write("<fg=green>   $messagingProviderKey</>", true);
         $output->write("<fg=green>   $messagingProvider</>", true);
         $output->write("", true);
     }

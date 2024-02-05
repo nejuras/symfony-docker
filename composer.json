@@ -18,9 +18,11 @@
         "symfony/dotenv": "7.0.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.0.*",
+        "symfony/google-mailer": "7.0.*",
         "symfony/mercure-bundle": "^0.3.8",
         "symfony/runtime": "7.0.*",
-        "symfony/yaml": "7.0.*"
+        "symfony/yaml": "7.0.*",
+        "twilio/sdk": "^7.14"
     },
     "config": {
         "allow-plugins": {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Service;
 
 use App\Entity\Notification;
-use App\Service as Service;
 use Doctrine\ORM\EntityManagerInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -13,12 +12,12 @@ use PHPUnit\Framework\TestCase;
 class NotificationTest extends TestCase
 {
     private MockObject & EntityManagerInterface $entityManagerMock;
-    private Service\Notification $notificationService;
+    private \App\Model\Notification $notificationService;
 
     protected function setUp(): void
     {
         $this->entityManagerMock = $this->createMock(EntityManagerInterface::class);
-        $this->notificationService = new Service\Notification($this->entityManagerMock);
+        $this->notificationService = new \App\Model\Notification($this->entityManagerMock);
     }
 
     public function testSendNotification(): void

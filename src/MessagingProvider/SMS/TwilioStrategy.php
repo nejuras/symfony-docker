@@ -6,14 +6,16 @@ namespace App\MessagingProvider\SMS;
 
 use App\MessagingProvider\MessagingProvider;
 use App\MessagingProvider\StrategyInterface;
-use App\Service\Notification;
-use App\Model\ShippingProvider;
+use App\Model\Notification;
+use App\Service\SmsSender;
+use Twilio\Exceptions\TwilioException;
 
 class TwilioStrategy implements StrategyInterface
 {
     private const string TWILIO_SMS_MESSAGING_TYPE = 'twiliosms';
+    private const string SMS = 'Money has been transferred successfully by %s provider!';
 
-    public function __construct(private readonly Notification $notification)
+    public function __construct(private readonly SmsSender $smsSender, private readonly Notification $notification)
     {
     }
 
@@ -24,6 +26,11 @@ class TwilioStrategy implements StrategyInterface
 
     public function process(MessagingProvider $data): string
     {
-        return $this->notification->send(self::TWILIO_SMS_MESSAGING_TYPE);
+        $text = sprintf(self::SMS, self::TWILIO_SMS_MESSAGING_TYPE);
+
+        $isSent = $this->smsSender->sendSms($text);
+        $this->notification->register(self::TWILIO_SMS_MESSAGING_TYPE, $isSent);
+
+        return $text;
     }
 }

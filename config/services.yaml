@@ -29,3 +29,14 @@ services:
     App\MessagingProvider\MessagingProviderContext:
         arguments:
             $messagingProviderStrategies: !tagged_iterator messagingProvider.strategies
+            
+    App\Service\SmsSender:
+        arguments:
+            $accountSid: '%env(TWILIO_ACCOUNT_SID)%'
+            $authToken: '%env(TWILIO_AUTH_TOKEN)%'
+            $twilioPhoneNumber: '%env(TWILIO_PHONE_NUMBER)%'
+            $phoneNumberSendTo: '%env(PHONE_NUMBER_SEND_TO)%' 
+    
+    App\Service\EmailSender:
+        arguments:
+            $email: '%env(EMAIL)%'
