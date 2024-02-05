@@ -13,6 +13,16 @@ with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) 
 4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
 5. Run `docker compose down --remove-orphans` to stop the Docker containers.
 
+## Service
+
+1. #### Gmail provider:
+* run command: `php bin/console app:send-notification --messagingProviderKey=gmailses`
+
+2. #### Twilio sms provider:
+* run command: `php bin/console app:send-notification --messagingProviderKey=twiliosms`
+
+
+
 ## Features
 
 * Production, development and CI ready
